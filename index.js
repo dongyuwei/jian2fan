@@ -20,11 +20,13 @@ content = content.join(' ');
 
 var map = {};
 var opencc = new OpenCC('s2tw.json');
-var reg = /{{_\('(.*?)'\)}}/gi;
-var results;
 
+// match {{ _(' ') }} or {{ _(" ") }}
+var reg = /{{\s*_\((['|"])(.*?)\1\)\s*}}/gi;
+
+var results;
 while ((results = reg.exec(content)) !== null) {
-    map[results[1]] = opencc.convertSync(results[1]);
+    map[results[2]] = opencc.convertSync(results[2]);
 }
 
 var tw = [], zh = [];
