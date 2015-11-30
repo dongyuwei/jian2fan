@@ -24,15 +24,13 @@ var results;
 while ((results = reg.exec(content.join(' '))) !== null) {
     map[results[1]] = opencc.convertSync(results[1]);
 }
-// msgid "登錄失敗"
-// msgstr ""
 
 var tw = [], zh = [];
 for(var key in map){
-    console.log(key, map[key]);
     tw.push('msgid "' + key + '"\nmsgstr "' + map[key] + '"');
     zh.push('msgid "' + key + '"\nmsgstr ""');
 }
 
 fs.writeFileSync('./zh.txt', zh.join('\n\n'), 'utf-8');
 fs.writeFileSync('./tw.txt', tw.join('\n\n'), 'utf-8');
+console.log('translations have been write to ./tw.txt ');
