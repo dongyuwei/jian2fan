@@ -1,0 +1,23 @@
+{
+  "name": "jian2fan",
+  "version": "1.0.0",
+  "description": "自动提取jinjia模板中 {{_('简体文本xyz')}} 要翻译的简体文字，批量翻译成繁体",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongyuwei/jian2fan.git"
+  },
+  "keywords": [],
+  "author": "dongyuwei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dongyuwei/jian2fan/issues"
+  },
+  "homepage": "https://github.com/dongyuwei/jian2fan#readme",
+  "dependencies": {
+    "opencc": "^1.0.3"
+  }
+}
