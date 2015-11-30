@@ -16,12 +16,14 @@ var items = fs.readdirSync(dir);
 for (var i = 0; i < items.length; i++) {
     content.push(fs.readFileSync(path.join(dir, items[i]), 'utf-8'));
 }
+content = content.join(' ');
 
 var map = {};
 var opencc = new OpenCC('s2tw.json');
 var reg = /{{_\('(.*?)'\)}}/gi;
 var results;
-while ((results = reg.exec(content.join(' '))) !== null) {
+
+while ((results = reg.exec(content)) !== null) {
     map[results[1]] = opencc.convertSync(results[1]);
 }
 
