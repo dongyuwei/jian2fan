@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dongyuwei/jian2fan#readme",
   "dependencies": {
-    "opencc": "^1.0.3"
+    "opencc": "^1.0.3",
+    "po2json": "^0.4.1"
   }
 }
